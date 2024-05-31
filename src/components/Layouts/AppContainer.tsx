@@ -74,6 +74,16 @@ export default function AppContainer({ children }: AppContainerProps) {
                 <ul>
                   <li>
                     <Link
+                      href="/base64-encoder-decoder"
+                      className={
+                        pathname === '/base64-encoder-decoder' ? 'active' : ''
+                      }
+                    >
+                      Base64 Encoder/Decoder
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="/lorem-ipsum-generator"
                       className={
                         pathname === '/lorem-ipsum-generator' ? 'active' : ''
