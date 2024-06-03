@@ -74,6 +74,17 @@ export default function AppContainer({ children }: AppContainerProps) {
                 <ul>
                   <li>
                     <Link
+                      href="/ascii-converter"
+                      className={
+                        pathname === '/ascii-converter' ? 'active' : ''
+                      }
+                    >
+                      ASCII Converter
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
                       href="/base64-encoder-decoder"
                       className={
                         pathname === '/base64-encoder-decoder' ? 'active' : ''
@@ -82,6 +93,7 @@ export default function AppContainer({ children }: AppContainerProps) {
                       Base64 Encoder/Decoder
                     </Link>
                   </li>
+
                   <li>
                     <Link
                       href="/lorem-ipsum-generator"
