@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -12,10 +13,17 @@ interface AppContainerProps {
 
 export default function AppContainer({ children }: AppContainerProps) {
   const pathname = usePathname();
+  const [openedDrawer, setOpenedDrawer] = useState(false);
 
   return (
     <div className="drawer lg:drawer-open">
-      <input id="menu-sidebar" type="checkbox" className="drawer-toggle" />
+      <input
+        id="menu-sidebar"
+        type="checkbox"
+        checked={openedDrawer}
+        onChange={() => setOpenedDrawer(!openedDrawer)}
+        className="drawer-toggle"
+      />
       <div className="drawer-content">
         <nav className="navbar bg-base-100">
           <div className="flex-none">
@@ -59,7 +67,11 @@ export default function AppContainer({ children }: AppContainerProps) {
         ></label>
 
         <div className="min-h-full px-4 py-2 sticky top-0 z-20 bg-base-100 shadow-sm">
-          <Link href="/" className="btn btn-ghost text-xl">
+          <Link
+            href="/"
+            onClick={() => setOpenedDrawer(false)}
+            className="btn btn-ghost text-xl"
+          >
             <Image src={logo} alt="logo" className="w-5 h-5" loading="eager" />
             DevTools
           </Link>
@@ -75,6 +87,7 @@ export default function AppContainer({ children }: AppContainerProps) {
                   <li>
                     <Link
                       href="/ascii-converter"
+                      onClick={() => setOpenedDrawer(false)}
                       className={
                         pathname === '/ascii-converter' ? 'active' : ''
                       }
@@ -86,6 +99,7 @@ export default function AppContainer({ children }: AppContainerProps) {
                   <li>
                     <Link
                       href="/base64-encoder-decoder"
+                      onClick={() => setOpenedDrawer(false)}
                       className={
                         pathname === '/base64-encoder-decoder' ? 'active' : ''
                       }
@@ -97,6 +111,7 @@ export default function AppContainer({ children }: AppContainerProps) {
                   <li>
                     <Link
                       href="/lorem-ipsum-generator"
+                      onClick={() => setOpenedDrawer(false)}
                       className={
                         pathname === '/lorem-ipsum-generator' ? 'active' : ''
                       }
