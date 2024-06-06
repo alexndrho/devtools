@@ -1,4 +1,10 @@
+import { Metadata } from 'next';
 import ClientAsciiConverter from './page.client';
+
+export const metadata: Metadata = {
+  title: 'ASCII generator - Dev tools',
+  description: 'Generate ASCII art from text.',
+};
 
 export default function AsciiConverter() {
   return (
