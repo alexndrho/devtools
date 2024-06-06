@@ -45,7 +45,7 @@ export default function ClientAsciiConverter() {
         }
 
         setOutput(data);
-      }
+      },
     );
   }, [input, font, width, horizontalLayout, verticalLayout]);
 
@@ -107,7 +107,7 @@ export default function ClientAsciiConverter() {
             }
             onChange={(e) =>
               setHorizontalLayout(
-                e.target.value.toLowerCase() as figlet.KerningMethods
+                e.target.value.toLowerCase() as figlet.KerningMethods,
               )
             }
           >
@@ -130,7 +130,7 @@ export default function ClientAsciiConverter() {
             }
             onChange={(e) =>
               setVerticalLayout(
-                e.target.value.toLowerCase() as figlet.KerningMethods
+                e.target.value.toLowerCase() as figlet.KerningMethods,
               )
             }
           >

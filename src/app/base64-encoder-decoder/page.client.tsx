@@ -28,7 +28,7 @@ export default function ClientBase64EncoderDecoder() {
             .replace(/_/g, '/')
             .replace(/[^A-Za-z0-9+/]/g, '')
         : input,
-      'base64'
+      'base64',
     ).toString('utf-8');
 
     return decoded;

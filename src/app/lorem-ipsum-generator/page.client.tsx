@@ -1,24 +1,24 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { loremIpsum } from "lorem-ipsum";
-import CopyButton from "@/components/CopyButton";
-import { TbClipboard, TbClipboardCheck } from "react-icons/tb";
+import { useEffect, useState } from 'react';
+import { loremIpsum } from 'lorem-ipsum';
+import CopyButton from '@/components/CopyButton';
+import { TbClipboard, TbClipboardCheck } from 'react-icons/tb';
 
 export default function ClientLoremIpsumGenerator() {
-  const [units, setUnits] = useState("Paragraphs");
+  const [units, setUnits] = useState('Paragraphs');
   const [count, setCount] = useState<number | undefined>(1);
   const [asHtml, setAsHtml] = useState(false);
 
-  const [generatedText, setGeneratedText] = useState("");
+  const [generatedText, setGeneratedText] = useState('');
 
   useEffect(() => {
     setGeneratedText(
       loremIpsum({
         count: count || 0,
         units: units.toLowerCase() as any,
-        format: asHtml ? "html" : "plain",
-      })
+        format: asHtml ? 'html' : 'plain',
+      }),
     );
   }, [units, count, asHtml]);
 
@@ -81,7 +81,7 @@ export default function ClientLoremIpsumGenerator() {
                 {({ copied, copy }) => (
                   <div
                     className=" absolute top-2 right-2 tooltip tooltip-left"
-                    data-tip={copied ? "Copied!" : "Copy"}
+                    data-tip={copied ? 'Copied!' : 'Copy'}
                   >
                     <button
                       aria-label="copy button"
@@ -99,7 +99,7 @@ export default function ClientLoremIpsumGenerator() {
               </CopyButton>
 
               <div className="flex flex-col gap-4">
-                {generatedText.split("\n").map((paragraph, index) => (
+                {generatedText.split('\n').map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
