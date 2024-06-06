@@ -86,13 +86,13 @@ export default function AppContainer({ children }: AppContainerProps) {
                 <ul>
                   <li>
                     <Link
-                      href="/ascii-converter"
+                      href="/ascii-generator"
                       onClick={() => setOpenedDrawer(false)}
                       className={
-                        pathname === '/ascii-converter' ? 'active' : ''
+                        pathname === '/ascii-generator' ? 'active' : ''
                       }
                     >
-                      ASCII Converter
+                      ASCII Generator
                     </Link>
                   </li>
 
