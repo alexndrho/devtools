@@ -92,7 +92,7 @@ export default function AppContainer({ children }: AppContainerProps) {
                         pathname === '/ascii-generator' ? 'active' : ''
                       }
                     >
-                      ASCII Generator
+                      ASCII generator
                     </Link>
                   </li>
 
@@ -104,7 +104,7 @@ export default function AppContainer({ children }: AppContainerProps) {
                         pathname === '/base64-encoder-decoder' ? 'active' : ''
                       }
                     >
-                      Base64 Encoder/Decoder
+                      Base64 encoder/decoder
                     </Link>
                   </li>
 

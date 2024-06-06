@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function Base64EncoderDecoder() {
   return (
     <>
-      <h1 className="mb-8 text-4xl font-extrabold">Base64 Encoder/Decoder</h1>
+      <h1 className="mb-8 text-4xl font-extrabold">Base64 encoder/decoder</h1>
       <ClientBase64EncoderDecoder />
     </>
   );
