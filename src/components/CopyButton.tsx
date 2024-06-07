@@ -14,3 +14,4 @@ function CopyButton({ value, timeout = 2000, children }: CopyButtonProps) {
 }
 
 export default CopyButton;
+export type { CopyButtonProps };

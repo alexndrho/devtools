@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import figlet from 'figlet';
-import CopyButton from '@/components/CopyButton';
-import { TbClipboard, TbClipboardCheck } from 'react-icons/tb';
+import ClipboardCopyButton from '@/components/ClipboardCopyButton';
 
 figlet.defaults({ fontPath: '//unpkg.com/figlet@1.7.0/fonts/' });
 
@@ -144,26 +143,11 @@ export default function ClientAsciiConverter() {
       </div>
 
       <div className="relative mt-8 mockup-code">
-        <CopyButton value={output}>
-          {({ copied, copy }) => (
-            <div
-              className=" absolute top-2 right-2 tooltip tooltip-left"
-              data-tip={copied ? 'Copied!' : 'Copy'}
-            >
-              <button
-                aria-label="copy button"
-                onClick={copy}
-                className="copy-button btn btn-sm btn-square"
-              >
-                {copied ? (
-                  <TbClipboardCheck className="w-5 h-5" />
-                ) : (
-                  <TbClipboard className="w-5 h-5" />
-                )}
-              </button>
-            </div>
-          )}
-        </CopyButton>
+        <ClipboardCopyButton
+          value={output}
+          position="tooltip-left"
+          className="absolute top-2 right-2"
+        />
 
         {input &&
           output.split('\n').map((line, index) => (
