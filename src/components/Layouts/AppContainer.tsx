@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import logo from '@/assets/logo.png';
 import { TbFileText, TbMenu2, TbMoon, TbSun } from 'react-icons/tb';
+import { MdOutlineDesignServices } from 'react-icons/md';
 
 interface AppContainerProps {
   children?: React.ReactNode;
@@ -117,6 +118,26 @@ export default function AppContainer({ children }: AppContainerProps) {
                       }
                     >
                       Lorem ipsum generator
+                    </Link>
+                  </li>
+                </ul>
+              </details>
+            </li>
+
+            <li>
+              <details open>
+                <summary>
+                  <MdOutlineDesignServices className="w-5 h-5" />
+                  Design and Development Tools
+                </summary>
+                <ul>
+                  <li>
+                    <Link
+                      href="/url-parser"
+                      onClick={() => setOpenedDrawer(false)}
+                      className={pathname === '/url-parser' ? 'active' : ''}
+                    >
+                      URL parser
                     </Link>
                   </li>
                 </ul>
