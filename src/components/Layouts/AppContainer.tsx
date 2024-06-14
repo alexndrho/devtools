@@ -5,7 +5,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import logo from '@/assets/logo.png';
-import { TbFileText, TbMenu2, TbMoon, TbSun } from 'react-icons/tb';
+import {
+  TbBrandGithub,
+  TbFileText,
+  TbMenu2,
+  TbMoon,
+  TbSun,
+} from 'react-icons/tb';
 import { MdOutlineDesignServices } from 'react-icons/md';
 
 interface AppContainerProps {
@@ -44,6 +50,15 @@ export default function AppContainer({ children }: AppContainerProps) {
           </div>
 
           <div className="flex-none">
+            <Link
+              aria-label="Link to github"
+              href="https://github.com/alexndrho/devtools"
+              target="_blank"
+              className="btn btn-square btn-ghost"
+            >
+              <TbBrandGithub className="w-7 h-7" />
+            </Link>
+
             <label className="swap swap-rotate btn btn-square btn-ghost">
               <input
                 type="checkbox"
