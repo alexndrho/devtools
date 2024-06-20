@@ -13,7 +13,7 @@ export default function ClientIPAddressesLookupPage() {
     setLoading(true);
 
     const response = await fetch(
-      `http://ip-api.com/json/${ip}?fields=status,message,country,regionName,city,zip,lat,lon,timezone,isp,org,mobile,proxy,hosting,query`,
+      `/ip-api/${ip}?fields=status,message,country,regionName,city,zip,lat,lon,timezone,isp,org,mobile,proxy,hosting,query`,
     );
 
     const data = await response.json();
