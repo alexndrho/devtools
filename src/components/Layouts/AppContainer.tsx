@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import logo from '@/assets/logo.png';
 import {
   TbBrandGithub,
+  TbBulb,
   TbFileText,
   TbMenu2,
   TbMoon,
@@ -153,6 +154,28 @@ export default function AppContainer({ children }: AppContainerProps) {
                       className={pathname === '/url-parser' ? 'active' : ''}
                     >
                       URL parser
+                    </Link>
+                  </li>
+                </ul>
+              </details>
+            </li>
+
+            <li>
+              <details open>
+                <summary>
+                  <TbBulb className="w-5 h-5" />
+                  Utilities
+                </summary>
+                <ul>
+                  <li>
+                    <Link
+                      href="/ip-address-lookup"
+                      onClick={() => setOpenedDrawer(false)}
+                      className={
+                        pathname === '/ip-address-lookup' ? 'active' : ''
+                      }
+                    >
+                      IP address lookup
                     </Link>
                   </li>
                 </ul>
