@@ -10,20 +10,41 @@ export default function ClientIPAddressesLookupPage() {
   const [loading, setLoading] = useState(false);
 
   const fetchIpGeo = async (ip: string) => {
-    setLoading(true);
+    try {
+      setLoading(true);
 
-    const response = await fetch(
-      `/ip-api/${ip}?fields=status,message,country,regionName,city,zip,lat,lon,timezone,isp,org,mobile,proxy,hosting,query`,
-    );
+      const response = await fetch(
+        `/ip-api/${ip}?fields=status,message,country,regionName,city,zip,lat,lon,timezone,isp,org,mobile,proxy,hosting,query`,
+      );
 
-    const data = await response.json();
+      const data = await response.json();
 
-    setIpGeo(data);
-    setLoading(false);
+      setIpGeo(data);
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+      setLoading(false);
+
+      setIpGeo({
+        status: 'fail',
+        message: 'invalid query',
+      });
+    }
   };
 
   useEffect(() => {
-    fetchIpGeo('');
+    fetch('https://api.ipify.org/?format=json')
+      .then(async (response) => {
+        setLoading(true);
+
+        const data = await response.json();
+        fetchIpGeo(data.ip);
+      })
+      .catch(() => {
+        setLoading(true);
+
+        fetchIpGeo('');
+      });
   }, []);
 
   const handleSearch = () => {
