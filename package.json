@@ -13,6 +13,7 @@
     "figlet": "^1.7.0",
     "lorem-ipsum": "^2.0.8",
     "next": "14.2.3",
+    "qrcode": "^1.5.3",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "@types/figlet": "^1.5.8",
     "@types/node": "^20",
+    "@types/qrcode": "^1.5.5",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "daisyui": "^4.11.1",

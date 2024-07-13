@@ -178,6 +178,18 @@ export default function AppContainer({ children }: AppContainerProps) {
                       IP address lookup
                     </Link>
                   </li>
+
+                  <li>
+                    <Link
+                      href="/qr-code-generator"
+                      onClick={() => setOpenedDrawer(false)}
+                      className={
+                        pathname === '/qr-code-generator' ? 'active' : ''
+                      }
+                    >
+                      QR code generator
+                    </Link>
+                  </li>
                 </ul>
               </details>
             </li>
